@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ddslick</title>
+<!--Scripts-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.ddslick.min.js"></script>
+</head>
+
+<body>
+
+  <section>
+            <h2 id="demo">Demos:</h2>
+
+            <article class="half-l">
+                <h3><span class="demo-index">1</span>Basic Drop down</h3>
+                <div class="demo-content">
+                    <div class="demo-live">
+                        <div id="demoBasic">
+                        </div>
+                        <div class="spacer"></div>
+                        
+                    </div>                    
+                </div>
+            </article>
+
+            <article class="half-r">
+                Source:
+<pre class="prettyprint">
+
+$('#demoBasic').ddslick({
+    data: ddData,
+    width: 300,
+    imagePosition: "left",
+    selectText: "Select your favorite social network",
+    onSelected: function (data) {
+        console.log(data);
+    }
+});
+</pre>
+            <p>Plugin requires specific JSON data format to populate dropdown options. <a id="showSampleData">Click here to see the sample JSON data for the plugin</a> .</p>
+            </article>
+            
+            <div class="clearfix"></div>
+
+            <article class="half-l">
+                <h3><span class="demo-index">2</span>GET Selected Dropdown Option</h3>
+                <div class="demo-content">
+                    <div class="demo-live">
+                        <div id="demoShowSelected">
+                        </div>
+                        <div class="spacer"></div>
+                        <button id="showSelectedData">
+                            Get Selection</button>
+                    </div>                    
+                </div>
+            </article>
+
+            <article class="half-r">
+                Source:
+<pre class="prettyprint">
+$('#demoShowSelected').ddslick({
+    data: ddData,
+    selectText: "Select your favorite social network",
+});
+
+$('#showSelectedData').on('click', function () {
+    var ddData = $('#demoShowSelected').data('ddslick');
+    displaySelectedData("2: Getting Selected Dropdown Data" , ddData);
+});
+</pre>
+                <p>
+                    You may use jquery .data() with your selector to get data from plugin. <code>$('#demoShowSelected').data('ddslick');</code> will return a js object that contains: 
+                </p>
+                <ul>
+                    <li>selectedIndex <span class="weak">(0 based),</span></li>
+                    <li>selectedItem <span class="weak">(HTML 'li' element),</span></li>
+                    <li>selectedData <span class="weak">(nested object with text, value, description, imageSrc)</span></li>
+                </ul>   
+            </article>
+
+            <div class="clearfix"></div>
+
+                        <article class="half-l">
+                <h3><span class="demo-index">3</span>SET selected Dropdown Option</h3>
+                <div class="demo-content">
+                    <div class="demo-live">
+                        <p id="setIndexMsg">Try an index between 0 to 4</p>
+                        <input type="text" id="setIndex" value="3" />
+                        <button id="btnSetSelected">
+                            Set Selection</button>
+                        <div class="spacer"></div>
+                        <div id="demoSetSelected">
+                        </div>
+                        
+                        
+                    </div>                    
+                </div>
+            </article>
+
+            <article class="half-r">
+                Source:
+<pre class="prettyprint">
+$('#demoSetSelected').ddslick({
+    data: ddData,
+    selectText: "Select your favorite social network"
+});
+
+$('#btnSetSelected').on('click', function () {
+    var i = $('#setIndex').val();
+    if(i >= 0 && i <5)
+       $('#demoSetSelected').ddslick('select', {index: i });
+    else 
+       $('#setIndexMsg').effect('highlight',2400);
+});
+</pre>
+                <p>
+                    You may use plugin's select method like <code>$('#demoSetSelected').ddslick('select', {index: i });</code><br /> to select a particular index. 
+                </p>
+                  
+            </article>
+
+            <div class="clearfix"></div>
+
+
+            <article class="half-l">
+                <h3><span class="demo-index">4</span>Callback Function on Dropdown Selection</h3>
+                <div class="demo-content">
+                    <div class="demo-live">
+                        <div id="demoCallback"></div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="half-r">
+                Source:
+<pre class="prettyprint">
+$('#demoCallback').ddslick({
+    data: ddData,
+    selectText: "Select your favorite social network",
+    onSelected: function(data){
+        displaySelectedData("3: Callback Function on Dropdown Selection" , data);
+    }
+});
+</pre>
+                <p>Use plugin's <code>onSelected</code> callback function on selecting one of the drop down options. The callback data will include:</p>
+                <ul>
+                    <li>selectedIndex <span class="weak">(0 based),</span></li>
+                    <li>selectedItem <span class="weak">(HTML 'li' element),</span></li>
+                    <li>selectedData <span class="weak">(nested object with text, value, description, imageSrc)</span></li>
+                </ul>   
+            </article>               
+
+            <div class="clearfix"></div>
+            
+            <article class="half-l">
+                <h3><span class="demo-index">5</span>Dropdown with default selection</h3>
+                <div class="demo-content">
+                    <div class="demo-live">
+                        <div id="demoDefaultSelection"></div>
+                    </div>
+                </div>
+            </article> 
+
+            <article class="half-r">
+                Source:
+<pre class="prettyprint">
+$('#demoDefaultSelection').ddslick({
+    data: ddData,
+    defaultSelectedIndex:2
+});
+</pre>
+<p>Use Zero based plugin option <code>defaultSelectedIndex</code> to set up plugin to pre select the index, when first initializing. <br /><strong>Note:</strong>When there is no <code>selectText</code> the plugin selects the first item index[0] from dropdown options.</p>
+            </article>                  
+
+            <div class="clearfix"></div>
+
+            <article class="half-l">
+                <h3><span class="demo-index">6</span>Dropdown with image on right</h3>
+                <div class="demo-content">
+                    <div class="demo-live">
+                        <div id="demoImageRight"></div>
+                    </div>
+                </div>
+            </article> 
+
+            <article class="half-r">
+                Source:
+<pre class="prettyprint">
+$('#demoImageRight').ddslick({
+    data: ddData,
+    imagePosition:"right",
+    selectText: "Select your favorite social network"
+});
+</pre>
+<p>You have the flexibility to position image either on left or right using <code>imagePosition</code>, depending on your preference. <br />Also you can add your own styles to these images by modifying their CSS class <code>.dd-option-image, .dd-selected-image</code> on your page. For e.g. plugin sets the default max-width for images to 64px, that you can overwrite by adding these classes to your page and overwriting max-width style.</p>
+            </article>                  
+
+            <div class="clearfix"></div>
+
+            <article class="half-l">
+                <h3><span class="demo-index">7</span>Dropdown with truncated description</h3>
+                <div class="demo-content">
+                    <div class="demo-live">
+                        <div id="demoTruncated"></div>
+                    </div>
+                </div>
+            </article> 
+
+            <article class="half-r">
+                Source:
+<pre class="prettyprint">
+$('#demoTruncated').ddslick({
+    data: ddDataLongDescription,
+    selectText: "Select your favorite social network",
+    truncateDescription: true,
+    onSelected: function(data){
+        displaySelectedData("5: Dropdown with truncated description", data);
+    }
+});
+</pre>
+<p>By default plugin will truncate the description in selected view if it overflows. You may however turn the default behavior by setting <code>truncateDescription:false</code> to show the complete description. Either way you still get the complete description with returned selected data. Also use <code>.dd-desc</code> to add your own styles to description.</p>
+            </article>                  
+            
+            <div class="clearfix"></div>
+
+        </section>   
+        <div class="clearfix"></div>
+        <div id="dd-modal">
+            <div id="dd-display-data">
+            </div>
+            <br />
+            <button id="close-modal" class="button-basic">Close</button>
+        </div>
+<script type="text/javascript">
+  $(document).ready(function () {
+
+            //Show or hide source for the demo---
+            $("#close-modal").on('click', function () {
+                $('#dd-modal').effect('drop');
+            });
+
+            //Dropdown plugin data
+            var ddData = [
+                {
+                    text: "Facebook",
+                    value: "FB",
+                    description: "Description with Facebook",
+                    imageSrc: "http://dl.dropbox.com/u/40036711/Images/facebook-icon-32.png"
+                },
+                {
+                    text: "Twitter",
+                    value: "TWT",
+                    description: "Description with Twitter",
+                    imageSrc: "http://dl.dropbox.com/u/40036711/Images/twitter-icon-32.png"
+                },
+                {
+                    text: "LinkedIn",
+                    value: "LI",
+                    description: "Description with LinkedIn",
+                    imageSrc: "http://dl.dropbox.com/u/40036711/Images/linkedin-icon-32.png"
+                },
+                {
+                    text: "Foursquare",
+                    value: "FSQ",
+                    description: "Description with Foursquare",
+                    imageSrc: "http://dl.dropbox.com/u/40036711/Images/foursquare-icon-32.png"
+                }
+            ];
+//Demo 1---------------------
+            $('#demoBasic').ddslick({
+                data: ddData,
+                selectText: "Select your favorite social network"
+            });
+
+            //Demo 2----------------------
+            $('#demoShowSelected').ddslick({
+                data: ddData,
+                selectText: "Select your favorite social network"
+            });
+
+            $('#showSelectedData').on('click', function () {
+                var ddData = $('#demoShowSelected').data('ddslick');
+                displaySelectedData("2: Getting Selected Dropdown Data" , ddData);                
+            });
+
+            //Demo 3 -------------------------
+            $('#demoSetSelected').ddslick({
+                data: ddData,
+                selectText: "Select your favorite social network"
+            });
+
+            $('#btnSetSelected').on('click', function () {
+                var i = $('#setIndex').val();
+                if (i >= 0 && i < 5)
+                    $('#demoSetSelected').ddslick('select', { index: i });
+                else
+                    $('#setIndexMsg').effect('highlight', 2400);
+            });
+
+            //Demo 4--------------------------
+            $('#demoCallback').ddslick({
+                data: ddData,
+                selectText: "Select your favorite social network",
+                onSelected: function(data){
+                    displaySelectedData("3: Callback Function on Dropdown Selection" , data);
+                }
+            });
+
+            //Demo 5 -------------------------
+            $('#demoDefaultSelection').ddslick({
+                data: ddData,
+                defaultSelectedIndex:2
+            });
+
+            //Demo 6---------------------------
+            $('#demoImageRight').ddslick({
+                data: ddData,
+                imagePosition: "right",
+                selectText: "Select your favorite social network"
+            });
+
+            //Demo 7--------------------------
+
+            //Dropdown plugin data
+            var ddDataLongDescription = [
+                {
+                    text: "Facebook",
+                    value: 1,
+                    description: "Description with Facebook",
+                    imageSrc: "http://dl.dropbox.com/u/40036711/Images/facebook-icon-32.png"
+                },
+                {
+                    text: "Twitter",
+                    value: 2,
+                    description: "Twitter is an online social networking service and microblogging service that enables its users to send and read text-based posts of up to 140 characters, known as 'tweets'. It was created in March 2006 by Jack Dorsey and launched that July.",
+                    imageSrc: "http://dl.dropbox.com/u/40036711/Images/twitter-icon-32.png"
+                },
+                {
+                    text: "LinkedIn",
+                    value: 3,
+                    description: "Description with LinkedIn",
+                    imageSrc: "http://dl.dropbox.com/u/40036711/Images/linkedin-icon-32.png"
+                },
+                {
+                    text: "Foursquare",
+                    value: 4,
+                    description: "Description with Foursquare",
+                    imageSrc: "http://dl.dropbox.com/u/40036711/Images/foursquare-icon-32.png"
+                }
+            ];
+
+            $('#demoTruncated').ddslick({
+                data: ddDataLongDescription,
+                selectText: "Select your favorite social network",
+                truncateDescription: true,
+                onSelected: function(data){
+                    displaySelectedData("5: Dropdown with truncated description", data);
+                }
+            });
+
+            //Callback function:
+            function displaySelectedData(demoIndex, ddData) {
+
+                $('#dd-display-data').html("<h3>Data from Demo " + demoIndex + "</h3>");
+                $('#dd-display-data').append('<strong>selectedIndex:</strong> ' + ddData.selectedIndex + '<br/><strong>selectedItem:</strong> Check your browser console for selected "li" html element');
+
+                if (ddData.selectedData) {
+                    $('#dd-display-data').append(
+                        '<br/><br/><strong>selectedData:</strong><br/><strong>Text:</strong> ' + ddData.selectedData.text +
+                        '<br/><strong>Value:</strong>  ' + ddData.selectedData.value +
+                        '<br/><strong>Description:</strong>  ' + ddData.selectedData.description +
+                        '<br/><strong>ImageSrc:</strong>  ' + ddData.selectedData.imageSrc)
+                }
+                $('#dd-modal').fadeIn();
+                console.log(ddData);
+            }
+
+            $('#showSampleData').on('click', function(){
+                $('#dd-display-data').html('<pre>'+ $('#JSONData').html() +'</pre>');
+                
+                $('#dd-modal').fadeIn();
+            });
+
+        });
+    </script>
+</body>
+</html>

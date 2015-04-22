@@ -1,0 +1,100 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache, must-revalidate">
+<meta http-equiv="Content-Type" content="text/html;utf-8">
+<meta http-equiv="pragram" content="no-cache">
+<meta http-equiv="expires" content="0">
+<title></title>
+<link rel="stylesheet" type="text/css" media="all" href="static/table/tablesorter.css" />
+<script type="text/javascript" src="static/jquery-1.4.4.min.js"></script>
+<style>
+	body{font-size:12px;}
+</style>
+<script language='javascript'>
+<!--
+$(document).ready(function(){
+	$(".select").change(function(){
+		var val=$(this).val()||'';
+		if(val!=''){
+			$("link").attr("href","static/table/"+val+".css");
+			$("table#productList").attr("class",val);
+		}
+	}).trigger("change");
+});
+//-->
+</script>
+</head>
+<body>
+<select class='select'>
+	<option value='tablesorter' selected='selected'>tablesorter</option>
+	<option value='10min'>10min</option>
+	<option value='alpha'>alpha</option>
+	<option value='blaugrana'>blaugrana</option>
+	<option value='BlixTheme'>Blix Theme</option>
+	<option value='BlueGradient'>Blue gradient</option>
+	<option value='bluetable'>bluetable</option>
+	<option value='cnc'>cnc</option>
+	<option value='coffee-with-milk'>coffee-with-milk</option>
+	<option value='datatable'>datatable</option>
+	<option value='gmail'>gmail</option>
+	<option value='GrayedOut'>Grayed Out</option>
+	<option value='inphecthyuz'>inphecthyuz</option>
+	<option value='itunes'>itunes</option>
+	<option value='mediagroove'>mediagroove</option>
+	<option value='muffin'>muffin</option>
+	<option value='niko'>niko</option>
+	<option value='oranges-in-the-sky'>oranges-in-the-sky</option>
+	<option value='OrangeYouGlad'>OrangeYouGlad</option>
+	<option value='ShadesOfBlue'>Shades of Blue</option>
+	<option value='tagbox'>tagbox</option>
+	<option value='warmfall'>warmfall.css</option>
+</select>
+new:<select class='select'>
+	<option value=''>新建css:请选择</option>
+	<option value='dataintable'>dataintable</option>
+</select>
+<div id="itsthetable">
+<table id="productList" class="tablesorter">
+<thead>
+	<tr>
+		<th>产品编号</th>
+		<th>产品名称</th>
+		<th>别名</th>
+		<th>数量</th>
+		<th>价格</th>
+		<th>折扣率</th>
+		<th>实际价格</th>
+		<th>配送时间</th>
+		<th>删除</th>
+	</tr>
+</thead>
+<tbody>
+	<tr class="groupid0">
+		<td>50920050</td>
+		<td width="190px">小毛巾礼盒</td>
+		<td width="100px"></td>
+		<td class="quantityTd"></td>
+		<td>0.0</td>
+		<td class="rateTd"></td>
+		<td class="presentPriceTd"></td>
+		<td class="deliveryTimeTd">	</td>
+		<td>删除</td>
+	</tr>
+	<tr class="groupid0">
+		<td>50920050</td>
+		<td width="190px">小毛巾礼盒</td>
+		<td width="100px"></td>
+		<td class="quantityTd"></td>
+		<td>0.0</td>
+		<td class="rateTd"></td>
+		<td class="presentPriceTd"></td>
+		<td class="deliveryTimeTd">	</td>
+		<td>删除</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+</body>
+</html>

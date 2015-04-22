@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Demo-图片轮换可视化编辑器-D.夏亦知非</title>
+<script src="js/jquery-1.4.1.min.js"></script>
+<script src="js/jquery.d.imagechange.min.js"></script>
+<style>
+body{margin:0;padding:0px;font-family:"Verdana","宋体";color:#000;font-size:12px;}
+.title, .title2{line-height:25px;padding-left:20px;}
+.title{background-color:#000;margin:0;overflow:auto;color:#FFF;}
+.title2{background-color:#666;height:25px;margin:5px 0;color:#FFF;font-weight:bold;}
+.t1,.t2{width:30px;height:15px;}
+.t3{width:90px;height:15px;}
+</style>
+<script>
+// 需要你写的数据集合
+var _data = [
+	{title:'李彦宏',desc:'立刻加入我们,获取百度之星荣誉称号',src:'img/1.jpg',href:'http://www.baidu.com',target:'_blank'},
+	{title:'马云',desc:'立刻加入我们,获取TOP大赛巨额奖项',src:'img/2.jpg'},
+	{title:'路飞',desc:'立刻加入我们,寻找伟大航路的宝藏',src:'img/3.jpg'}
+];
+
+// 默认设置,直接从源文件COPY过来的,用于检测是否修改
+var _default = 
+		{
+			bg:true,						// 是否背景色
+			title:true,						// 是否有标题
+			desc:true,						// 是否有描述
+			btn:true,						// 是否显示按钮
+			repeat:'no-repeat',				// 重复规则 'no-repeat' 'repeat-x' 'repeat-y' 'repeat'
+			
+			bgColor:'#000',					// 背景色
+			bgOpacity:.5,					// 背景透明度
+			bgHeight:40,					// 背景高
+			
+			titleSize:14,					// 标题文字大小
+			titleFont:'Verdana,宋体',		// 标题文本字体
+			titleColor:'#FFF',				// 标题文本颜色
+			titleTop:4,						// 标题上边距
+			titleLeft:4,					// 标题左边距
+			
+			descSize:12,					// 描述文字大小
+			descFont:'Verdana,宋体',			// 描述文本字体
+			descColor:'#FFF',				// 描述文本颜色
+			descTop:2,						// 描述上边距
+			descLeft:4,						// 描述左边距
+			
+			btnColor:'#FFF',				// 按钮颜色1 
+			btnOpacity:.5,					// 未选中按钮透明度
+			btnFont:'Verdana',				// 按钮文本字体
+			btnFontSize:12,					// 按钮文字大小(注意:Chrome有默认最小字号的限制)
+			btnFontColor:'#000',			// 按钮文本颜色
+			btnText:true,					// 是否显示文本
+			btnWidth:15,					// 按钮宽
+			btnHeight:15,					// 按钮高
+			btnMargin:4,					// 按钮间距
+			btnTop:4,						// 按钮上边距
+			
+			playTime:2000,					// 轮换间隔时间,单位(毫秒)
+			animateTime:500,				// 动画执行时间,单位(毫秒)
+			animateStyle:'o',				// 动画效果:'o':渐显 'x':横向滚动 'y':纵向滚动 'show':原地收缩伸展 'show-x':横向收缩伸展 'show-y':纵向收缩伸展' none':无动画
+			width:300,						// 宽, 不设定则从DOM读取
+			height:200						// 高, 不设定则从DOM读取
+			
+		};
+$(document).ready(function(){
+	$('#pic').d_imagechange({
+		data:_data
+	});
+	
+	$('table tr:odd').css('background-color','#EEE');
+	
+	$('input').change(function(){
+		var option = {data:_data};
+		$('.t1').each(function(){
+			option[this.name] = parseInt(this.value);
+		});
+		$('.t2').each(function(){
+			option[this.name] = parseFloat(this.value);
+		});
+		$('.t3').each(function(){
+			option[this.name] = this.value;
+		});
+		$(':radio:checked').each(function(){
+			option[this.name] = this.value;
+		});
+		$(':checkbox').each(function(){
+			option[this.name] = this.checked;
+		});
+		
+		$('#pic').empty();
+		$('#pic').d_imagechange(option);
+		
+		option.data = '此处换成你的数据变量名称';
+		$('textarea').empty()
+					 .html(obj2str(option));
+				 
+	});
+	
+	// 不完整的obj2str,纯粹为此例而写
+	function obj2str(o){
+		var r = [];
+		r[0]="{";
+		for(var i in o){
+			if(_default[i]==o[i]){continue;}
+			r[r.length]='\n';
+			r[r.length]=i;
+			r[r.length]=":";
+			if(typeof o[i] == 'string'){
+				r[r.length]='\'';
+				r[r.length]=o[i];
+				r[r.length]='\'';
+			}else{
+				r[r.length]=o[i];
+			}
+			r[r.length]=",";
+		}
+		r[r.length-1]="\n}"
+		return r.join("");
+	}
+});
+</script>
+</head>
+
+<body>
+<div class="title">
+D.ImageChange.可视化编辑器.<br />
+说明1:输入我就不做验证了,还是不要随便输入吧 <br />
+说明2:颜色选择的插件我也不加了,什么?你不会填?那百度"在线颜色选择"吧... <br />
+说明3:此编辑器生成的代码为需要传入的option参数,完整代码请参考我的BLOG <br />
+说明4:什么?你要用你自己的图片?请下载压缩包然后自己替换吧..这里我就不提供此功能了<br />
+说明5:什么?你还有问题?......
+</div>
+<div class="title2">参数配置(修改完后最好点击一下空白区以确保配置生效)</div>
+<table width="100%" cellpadding="5">
+<tr>
+<td width="150">可见性:</td>
+<td>
+<input type="checkbox" name="bg" checked=true />背景色　
+<input type="checkbox" name="title" checked=true />标题　
+<input type="checkbox" name="desc" checked=true />描述　
+<input type="checkbox" name="btn" checked=true />按钮　
+<input type="checkbox" name="btnText" checked=true />按钮文本		
+</td>
+</tr>
+
+<tr>
+<td>动画效果:</td>
+<td>
+<input type="radio" name="animateStyle" checked=true value="o"/>渐显　
+<input type="radio" name="animateStyle" value="x" />横向滚动　
+<input type="radio" name="animateStyle" value="y" />纵向滚动　
+<input type="radio" name="animateStyle" value="show" />原地收缩伸展　
+<input type="radio" name="animateStyle" value="show-x" />横向收缩伸展　
+<input type="radio" name="animateStyle" value="show-y" />纵向收缩伸展　
+<input type="radio" name="animateStyle" value="none" />无动画　	
+</td>
+</tr>
+
+<tr>
+<td>平铺效果:</td>
+<td>
+<input type="radio" name="repeat" checked=true value="no-repeat" />不平铺　
+<input type="radio" name="repeat" value="repeat-x" />横向平铺　
+<input type="radio" name="repeat" value="repeat-y" />纵向平铺　
+<input type="radio" name="repeat" value="repeat" />完全平铺　
+</td>
+</tr>
+
+<tr>
+<td>时间:</td>
+<td>
+轮换间隔时间:<input type="text" class="t1" name="playTime" value="2000" />　
+动画执行时间:<input type="text" class="t1" name="animateTime" value="500" />
+</td>
+</tr>
+
+<tr>
+<td>尺寸(整数):</td>
+<td>
+宽度:<input type="text" class="t1" name="width" value="300" />　
+高度:<input type="text" class="t1" name="height" value="200" />　
+背景高度:<input type="text" class="t1" name="bgHeight" value="40" />　
+按钮宽度:<input type="text" class="t1" name="btnWidth" value="15" />　
+按钮高度:<input type="text" class="t1" name="btnHeight" value="15" />	
+</td>
+</tr>
+
+<tr>
+<td>透明度(0-1):</td>
+<td>
+背景透明度:<input type="text" class="t2" name="bgOpacity" value="0.5" />　
+未选中按钮透明度:<input type="text" class="t2" name="btnOpacity" value="0.5" />　
+</td>
+</tr>
+
+<tr>
+<td>间距(整数):</td>
+<td>
+标题左边距:<input type="text" class="t1" name="titleLeft" value="4" />　
+标题上边距:<input type="text" class="t1" name="titleTop" value="4" />　
+描述左边距:<input type="text" class="t1" name="descLeft" value="4" />　
+描述上边距:<input type="text" class="t1" name="descTop" value="2" />　
+按钮间距:<input type="text" class="t1" name="btnMargin" value="4" />　
+按钮上边距:<input type="text" class="t1" name="btnTop" value="4" />　
+</td>
+</tr>
+
+<tr>
+<td>标题:</td>
+<td>
+标题颜色:<input type="text" class="t3" name="titleColor" value="#FFF" />　
+标题大小:<input type="text" class="t1" name="titleSize" value="14" />　
+标题字体:<input type="text" class="t3" name="titleFont" value="Verdana,宋体" />　
+</td>
+</tr>
+
+<tr>
+<td>描述:</td>
+<td>
+描述颜色:<input type="text" class="t3" name="descColor" value="#FFF" />　
+描述大小:<input type="text" class="t1" name="descSize" value="12" />　
+描述字体:<input type="text" class="t3" name="descFont" value="Verdana,宋体" />
+</td>
+</tr>
+
+<tr>
+<td>按钮:</td>
+<td>
+按钮颜色:<input type="text" class="t3" name="btnColor" value="#FFF" />　
+按钮文字颜色:<input type="text" class="t3" name="btnFontColor" value="#000" />　
+按钮文字大小:<input type="text" class="t1" name="btnFontSize" value="12" />　
+按钮文字字体:<input type="text" class="t3" name="btnFont" value="Verdana" />　
+</td>
+</tr>
+</table>
+
+
+
+
+<div class="title2">效果</div>
+<div id="pic" style="width:300px;height:200px;margin-left:20px;"></div>	
+<div class="title2">生成代码</div>　
+<textarea style="width:940px;height:400px;">
+	
+</textarea>
+</body>
+
+</html>

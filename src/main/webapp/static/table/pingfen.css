@@ -1,0 +1,28 @@
+﻿table.pingfen {
+    border-collapse: collapse;
+    border-spacing: 0;
+	border: 1px solid #DFDFDF;
+}
+
+.pingfen th {
+    background-color: #FAFAFA;
+    border-bottom: 1px solid #DFDFDF;
+    border-left: 0 none;
+    border-right: 0 none;
+    color: #777777;
+    font-size: 12px;
+    height: 23px;font-weight: normal;
+	padding: 0 10px;
+}
+.pingfen td {
+    border-bottom: 1px dashed #CCCCCC;
+    font-size: 12px;
+    padding: 4px 10px;
+}
+.tl {
+    text-align: left;
+}
+.tr {
+    text-align: right;
+}
+

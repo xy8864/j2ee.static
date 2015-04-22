@@ -1,0 +1,76 @@
+/* 
+	Clean and crisp table styles
+	written by Mats Lindblad http://blogs.su.se/matlin/
+*/
+
+table {
+	font: normal 90%/150% Verdana, Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	border: 1px solid #f0f8ff;
+	border-top: 1px solid #87CEFA;
+	border-bottom: 1px solid #87CEFA;
+}
+table th {
+	font: bold 1.1em/120% Verdana, Arial, Helvetica, sans-serif;
+	padding: 5px 10px;
+	font-variant: small-caps;
+	color: #047;
+	font-weight: bold;
+	text-align: left;
+	letter-spacing: -1px;
+}
+table thead th {
+	border: 1px solid #87CEFA;
+	white-space: nowrap;
+	background: #F0F8FF;
+}
+table tbody td ,table tbody th {
+	padding: 5px 10px;
+	background: #fff;
+	color: #000;
+}
+table tbody th {
+	color: #047;
+	font-weight: normal;
+	font-variant: normal;
+	font-size: 1em;
+}
+table tbody tr.odd {
+	border: 1px solid #87CEFA;
+}
+table tbody tr.odd td, table tbody tr.odd th {
+	background: #F0F8FF;
+}
+table tfoot td, tfoot th {
+	border: none;
+	padding-top: 10px;
+}
+table caption {
+	font-family: "Georgia", serif;
+	letter-spacing: 5px;
+	font-style: italic;
+	text-align: left;
+	text-indent: 2em;
+	text-transform: uppercase;
+	font-size: 150%;
+	padding: 10px 0;
+	color: #047;
+}
+table  a:link {
+	color: #DC143C;
+}
+table  th a:link {
+	color: #047;
+	text-decoration: none;
+}
+table  a:visited{
+	color: #036;
+	text-decoration: line-through;
+}
+table  a:hover{
+	color: #000;
+	text-decoration:none;
+}
+table  a:active{
+	color: #000;
+}

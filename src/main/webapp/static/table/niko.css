@@ -1,0 +1,85 @@
+table {
+	font-family: "Tahoma", Verdana, Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width:99%;
+}
+
+table caption{
+	background: url(title.png) no-repeat 50px;
+	font-size: 200%;
+	text-indent: -10000px;
+}
+
+table thead tr{
+	background-color: #D9FFD9;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+table tfoot tr{
+	background-color: #FFFFFF;
+}
+
+table thead th{
+	padding: 0.5em;
+	white-space: nowrap;
+}
+
+table tfoot th{
+	font-size: 110%;
+	text-align: right;
+	padding-right: 0.5em;
+	letter-spacing: 1px;
+	background:  
+}
+
+table tfoot td{
+	padding-left: 0.5em;
+	color: red;
+	font-size: 110%;
+	font-weight: 600;
+}
+
+table tfoot td:hover{
+	background-color: red;
+	color: white;
+}
+
+table tr{
+	background-color: #EAFDFF;
+}
+
+table tr.odd{
+	background-color: #FFFFFF;
+}
+
+table tbody tr:hover{
+	background-color: #FFCCCC;
+}
+
+table td, table th{
+	border: 1px dotted #CCCCCC;
+}
+
+table tbody td{
+	padding: 0.5em;
+}
+
+table td a:link, table th a:link{
+	color: black;
+}
+
+table td a:visited, table th a:visited{
+	color: black;
+	text-decoration: underline;
+}
+
+table td a:hover, table th a:hover{
+	color: purple;
+	text-decoration: underline;
+}
+
+table td:last-child a:hover{
+	color: red;
+	text-decoration: underline overline;
+}

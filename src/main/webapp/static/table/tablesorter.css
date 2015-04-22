@@ -1,0 +1,65 @@
+TABLE.tablesorter {
+	FONT-SIZE: 12px; WIDTH: 100%; TEXT-ALIGN: center;LINE-HEIGHT: 20px;
+}
+TABLE.tablesorter THEAD TR TH {
+	 BORDER-TOP: #fff 1px solid; 
+	 text-align:center;
+	 color:#1C1C1C;
+	 font-weight:bold;
+	FONT-SIZE: 12px;   PADDING: 2px 0; 
+	BORDER-BOTTOM: #fff 1px solid; BACKGROUND-COLOR: #BBE3FF
+}
+TABLE.tablesorter THEAD TR TH a{
+	color:#1C1C1C;
+}
+TABLE.tablesorter TFOOT TR TH {
+	BORDER-RIGHT: #fff 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: #fff 1px solid; PADDING-LEFT: 4px; FONT-SIZE: 8pt; PADDING-BOTTOM: 4px; BORDER-LEFT: #fff 1px solid; PADDING-TOP: 4px; BORDER-BOTTOM: #fff 1px solid; BACKGROUND-COLOR: #e6eeee
+}
+
+TABLE.tablesorter THEAD TR .header {
+	BACKGROUND-POSITION: right center; BACKGROUND-IMAGE: url(../images/bg.gif); CURSOR: pointer; BACKGROUND-REPEAT: no-repeat
+}
+TABLE.tablesorter TBODY TD {
+	PADDING:2px 4px; VERTICAL-ALIGN: middle; COLOR: #1C1C1C; BACKGROUND-COLOR: #fff
+}
+TABLE.tablesorter TBODY TD a{COLOR:	#0062DC; FONT-WEIGHT: BOLD;}
+TABLE.tablesorter TBODY TD.even {
+	PADDING:2px 4px; VERTICAL-ALIGN: middle; COLOR: #1C1C1C; BACKGROUND-COLOR: #E3E9F9;
+}
+TABLE.tablesorter TBODY TD.highlight {
+	BACKGROUND-COLOR: yellow;
+	font-weight:bold;
+	font-style:italic;
+	color:blue;
+}
+
+TABLE.tablesorter TBODY TR.odd TD {
+	BACKGROUND-COLOR: #EEEEEE
+}
+TABLE.tablesorter TBODY TR.odd TD.highlight {
+	BACKGROUND-COLOR: yellow;
+	font-weight:bold;
+	font-style:italic;
+	color:blue;
+}
+TABLE.tablesorter THEAD TR .headerSortUp {
+	BACKGROUND-IMAGE: url(../images/asc.gif)
+}
+TABLE.tablesorter THEAD TR .headerSortDown {
+	BACKGROUND-IMAGE: url(../images/desc.gif)
+}
+TABLE.tablesorter THEAD TR .headerSortDown {
+	BACKGROUND-COLOR: #8dbdd8
+}
+TABLE.tablesorter THEAD TR .headerSortUp {
+	BACKGROUND-COLOR: #8dbdd8
+}
+TABLE.tablesorter tbody tr:hover td, TABLE.tablesorter tr.over, .contribTable tr:hover {
+    background: #BBE3FF !important; /* important needed for Tapestry, as is .table tr:hover */
+}
+TABLE.tablesorter tbody tr:hover td, TABLE.tablesorter tr.over td, .contribTable tr:hover td {
+	
+}
+table.tdhasimg tbody td{
+	PADDING:1px 4px
+}

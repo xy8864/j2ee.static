@@ -1,0 +1,143 @@
+ div#itsthetable {
+	font: normal normal normal 12px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	height: 500px
+}
+
+div#itsthetable table {
+	border-collapse: collapse
+}
+table caption {
+	background:  #FFF repeat-x scroll center left;
+	border-bottom: 1px solid #CCC;
+	border-top: 1px solid #CCC;
+	display: none;
+	font: normal normal bold 13px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	padding: 1px
+}
+
+
+table thead tr th, table tr thead td {
+	background:  #D7EBF9 repeat-x scroll center left;
+	border-bottom: 1px solid #CCC;
+	font: normal normal normal 12px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	padding: 1px;
+	position: relative;
+	text-align: center
+}
+
+ table thead tr th, table  tr thead td {
+	position: inherit
+	
+}
+
+table tbody tr th,table  tbody tr td {
+	background:  #FFF repeat-x scroll center left;
+	display: table-cell;
+	font: normal normal normal 12px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	padding: 1px;
+	text-align: left;
+	vertical-align: top;
+	overflow:hidden;
+}
+
+table tbody tr.odd th, table tbody tr.odd td {
+	background:  #EEE repeat-x scroll center left;
+	display: table-cell;
+	padding: 1px;
+	text-align: left;
+	vertical-align: middle
+}
+
+table tbody tr:hover th, table tbody tr:hover td,table  tbody tr.odd:hover th, table tbody tr.odd:hover td {
+	background:  #acfaf1 repeat-x scroll center left;
+	display: table-cell;
+	padding: 1px;
+	text-align: left;
+}
+
+table tbody tr a, table tbody tr a:link, table tbody tr a:visited {
+	color: #009;
+	text-decoration: none
+}
+
+table tbody a:hover {
+	color: #009;
+	text-decoration: underline
+}
+
+table tbody tr:hover th a, table tbody tr:hover td a,table  tbody tr.odd:hover th a,table  tbody tr.odd:hover td a {
+	text-decoration: none
+}
+
+table tbody tr:hover th a:hover, table tbody tr:hover td a:hover, table tbody tr.odd:hover th a:hover, table tbody tr.odd:hover td a:hover {
+	text-decoration: underline
+}
+
+table tfoot tr th {
+	background:  #FFF repeat scroll center left;
+	border-top: 1px solid #CCC;
+	font: normal normal bold 11px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	padding: 1px;
+	text-align: right;
+	z-index: 1000000
+}
+
+table tfoot tr td {
+	background:  #FFF repeat scroll center left;
+	border-top: 1px solid #CCC;
+	font: italic normal normal 11px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	padding: 1px;
+	z-index: 1000000
+}
+
+ table tfoot tr th, table  tfoot tr td {
+	border-bottom: 1px solid #CCC
+}
+
+ 
+table  thead {
+	display: block
+}
+
+ table tfoot {
+	display: block;
+	position: absolute;
+	top: 620px
+}
+
+ table tbody {
+	display: block;
+	height: 500px;
+	overflow: auto
+}
+
+ table thead tr th, table  tbody tr th {
+	width: 90px
+}
+
+ table thead tr th + th{
+	width: 250px
+}
+ table thead tr th + th + th,  table tbody tr td + td + td {
+	width: 100px
+}
+
+ table thead tr th + th + th + th,  table tbody tr td + td + td + td {
+	width: 100px
+}
+
+ table thead tr th + th + th + th + th {
+	width: 106px
+}
+
+ table tbody tr th + td + td + td + td {
+	width: 70px
+}
+
+ table tfoot tr th {
+	width: 98px
+}
+
+ table tfoot tr th + td {
+	width: 526px
+}

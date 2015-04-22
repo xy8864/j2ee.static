@@ -1,0 +1,42 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache, must-revalidate">
+<meta http-equiv="Content-Type" content="text/html;utf-8">
+<meta http-equiv="pragram" content="no-cache"> 
+<meta http-equiv="expires" content="0"> 
+<title></title>
+<script language=Javascript>
+var proMaxHeight = 150;
+var proMaxWidth = 110;
+
+function proDownImage(ImgD){
+	var image=new Image();
+	image.src=ImgD.src;
+	if(image.width>0 && image.height>0){
+		var rate = (proMaxWidth/image.width < proMaxHeight/image.height)?proMaxWidth/image.width:proMaxHeight/image.height;
+		if(rate <= 1){   
+			ImgD.width = image.width*rate;
+			ImgD.height =image.height*rate;
+		}else{
+			ImgD.width = image.width;
+			ImgD.height =image.height;
+		}
+	}
+}
+</script>
+
+</head>
+<body>
+<img src="http://www.baidu.com/images/logo.gif" onload="proDownImage(this);" />
+<pre>
+上面是一般的HTML里面用的插入图片的一段。。。很简单。但是当插入的图片是网友上传的图片，
+对尺寸/比例不确定的时候。我们需要的就是这个js 了。。。这段代码可以根据网友上传的图片，
+进行比例缩放。这样不会导致很多商品展示都出现的。图片尺寸都固定死了的情况。。。。
+用法很简单，把上面的这段 javascript放到<head></head>之间，
+然后把<img src="http://www.baidu.com/images/logo.gif" /> 
+改成<img src="http://www.baidu.com/images/logo.gif" onload=proDownImage(this); />这样。
+就可以了。意思就是在图片load装载的时候，调用proDownImage函数对this(即图片本身)对象进行设置。就可以了。很简单，但很实用。 
+</pre>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.google.javascript:closure-compiler:r1810">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPO$/com/google/javascript/closure-compiler/r1810/closure-compiler-r1810.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPO$/com/google/javascript/closure-compiler/r1810/closure-compiler-r1810-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPO$/com/google/javascript/closure-compiler/r1810/closure-compiler-r1810-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

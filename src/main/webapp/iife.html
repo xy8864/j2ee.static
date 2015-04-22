@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        var iife={};
+        //立即执行函数"（Immediately-Invoked Function Expression，IIFE
+        (function(mod){
+            mod.version="0.0.1";
+            mod.utils=(function(u){
+                 return u;
+            })(mod.utils||{});
+            return mod;
+        })(iife||{});
+        console.info(iife);
+        //console.info(iife.version);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

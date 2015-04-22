@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Demo-图片轮换-D.夏亦知非</title>
+<script src="js/jquery-1.4.1.min.js"></script>
+<script src="js/jquery.d.imagechange.min.js"></script>
+<style>
+body{margin:0;padding:0px;}
+.title{height:25px;line-height:25px;background-color:#000;color:#FFF;margin:10px 0;padding-left:20px;font-family:"Verdana","宋体";font-size:12px;}
+</style>
+<script>
+
+// 需要你写的数据
+var data = [
+	{title:'李彦宏',desc:'立刻加入我们,获取百度之星荣誉称号',src:'img/1.jpg',href:'http://www.baidu.com',target:'_blank'},
+	{title:'马云',desc:'立刻加入我们,获取TOP大赛巨额奖项',src:'img/2.jpg'},
+	{title:'路飞',desc:'立刻加入我们,寻找伟大航路的宝藏',src:'img/3.jpg'}
+];
+	
+$(document).ready(function(){
+	$('#pic1').d_imagechange({
+		data:data,
+		animateStyle:'o'//默认值'o',可以不写	
+	});
+	
+	$('#pic2').d_imagechange({
+		data:data,
+		animateStyle:'x'
+	});
+	
+	$('#pic3').d_imagechange({
+		data:data,
+		animateStyle:'y'
+	});
+	
+	$('#pic4').d_imagechange({
+		data:data,
+		animateStyle:'show'
+	});
+	
+	$('#pic5').d_imagechange({
+		data:data,
+		animateStyle:'show-x'
+	});
+	$('#pic6').d_imagechange({
+		data:data,
+		animateStyle:'show-y'
+	});		
+	$('#pic7').d_imagechange({
+		data:data,
+		animateStyle:'none'
+	});	
+});
+</script>
+</head>
+
+<body>
+<div class="title">Demo 1 默认效果:渐显 animateStyle:'o'</div>
+<div id="pic1" style="width:300px;height:200px;margin-left:20px;">	
+</div>
+<div class="title">Demo 2 横向滚动效果 animateStyle:'x'</div>
+<div id="pic2" style="width:300px;height:200px;margin-left:20px;">	
+</div>
+<div class="title">Demo 3 纵向滚动效果 animateStyle:'y'</div>
+<div id="pic3" style="width:300px;height:200px;margin-left:20px;">	
+</div>
+<div class="title">Demo 4 原地收缩伸展 animateStyle:'show'</div>
+<div id="pic4" style="width:300px;height:200px;margin-left:20px;">	
+</div>
+<div class="title">Demo 5 横向收缩伸展 animateStyle:'show-x'</div>
+<div id="pic5" style="width:300px;height:200px;margin-left:20px;">	
+</div>
+<div class="title">Demo 6 纵向收缩伸展 animateStyle:'show-y'</div>
+<div id="pic6" style="width:300px;height:200px;margin-left:20px;">	
+</div>
+<div class="title">Demo 7 无动画< animateStyle:'none'</div>
+<div id="pic7" style="width:300px;height:200px;margin-left:20px;">	
+</div>
+
+</body>
+
+</html>

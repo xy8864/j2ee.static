@@ -1,0 +1,130 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache, must-revalidate">
+<meta http-equiv="Content-Type" content="text/html;utf-8">
+<meta http-equiv="pragram" content="no-cache">
+<meta http-equiv="expires" content="0">
+<title></title>
+<link rel="stylesheet" type="text/css" media="all" href="static/table/tablesorter.css" />
+<script type="text/javascript" src="static/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="static/plugins/simplemodal/jquery.simplemodal.1.4.2.min.js"></script>
+<script language='javascript'>
+<!--
+$(document).ready(function(){
+$(document).ready(function () {
+    $('#basicModal input.basic, #basicModal a.basic').click(function (e) {
+        //preventDefault方法取消事件的默认动作
+        e.preventDefault();
+        $('#basicModalContent').modal();
+    });
+	$(".qboxlink").click(function (e) {
+        //preventDefault方法取消事件的默认动作
+        e.preventDefault();
+        $('#qbox').modal();
+    });
+});
+});
+//-->
+</script>
+<style>
+#simplemodal-overlay
+{
+    background-color:#000;
+    cursor:wait;
+}
+
+/* Container */
+#simplemodal-container
+{
+    height:400px;
+    width:600px;
+    background-color:#fff;
+    border:3px solid #ccc;
+}
+#simplemodal-container a.modalCloseImg
+{
+    background:url(../img/basic/x.png) no-repeat;
+    width:25px; height:29px;
+    display:inline;
+    z-index:3200;
+    position:absolute;
+    top:-15px;
+    right:-18px;
+    cursor:pointer;
+}
+#simplemodal-container #basicModalContent
+{
+  padding:8px;
+}
+
+.qbox {
+    background-color: #FFFFFF;border: 1px solid #A2BBDD;/*position: absolute;left: -1000px;top: -1000px;*/width: 600px;height:400px;z-index: 100;
+}
+.qbox .top {
+    background: none repeat scroll 0 0 #E8EEFC;
+    color: #556386;
+    font-size: 14px;
+    margin: 0;
+    padding: 3px 0 3px 8px;
+    position: relative;
+}
+
+.qbox .close {
+    /*background: url("bddict/img/s2.gif") no-repeat scroll center center transparent;*/
+    cursor: pointer;
+    height: 15px;
+    position: absolute;
+    right: 4px;
+    top: 2px;
+    width: 15px;
+}
+.qbox .body {
+    height: 136px;
+    overflow: auto;
+    padding: 3px 0 0 8px;
+}
+.qbox .bottom {
+    background-color: #EFF5FD;
+    background-position: right center;
+    background-repeat: no-repeat;
+    color: #7777CC;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0;
+    padding: 4px 4px 3px 0;
+    text-align: right;
+}
+</style>
+</head>
+<body>
+<div id='basicModal'>
+<input type='button' name='basic' value='Demo' class='basic'/> or <a href='#' class='basic'>Demo</a> <a href='#' class='qboxlink'>qbox</a>
+</div>
+
+<div id="basicModalContent" style='display:none'>
+    <h1>Basic Modal Dialog</h1>
+
+    <p>For this demo, SimpleModal is using this "hidden" data for its content. You can also populate the modal dialog with standard HTML or with DOM element(s).</p>
+    <p>Examples:</p>
+    <p><code>$('#basicModalContent').modal(); // jQuery object; this demo</code></p>
+    <p><code>$.modal(document.getElementById('basicModalContent')); // DOM</code></p>
+    <p><code>$.modal('&lt;p&gt;&lt;b&gt;HTML&lt;/b&gt; elements&lt;/p&gt;'); // HTML</code></p>
+
+    <p><a href='http://www.ericmmartin.com/projects/simplemodal'>More details</a></p>
+</div>
+
+<br/>
+<div id="qbox" class='qbox' style='display: block;display:none;'>
+	<h3 class="top">
+		百度词典
+		<div class="close">x</div>
+	</h3>
+	<div class="body">
+		11111111111111111111
+	</div>
+	<div class="bottom"></div>
+</div>
+
+</body>
+</html>

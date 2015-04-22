@@ -1,0 +1,1 @@
+java -jar datauri-0.2.1.jar -o ajax-loading.gif.txt ajax-loading.gif

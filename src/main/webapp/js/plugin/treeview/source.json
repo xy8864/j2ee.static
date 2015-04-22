@@ -1,0 +1,24 @@
+[ 
+{
+	"text": "boss1",
+	"expanded": false,
+	"classes": "important",
+	"children": [
+		{"text": "children1"},
+		{"text": "children2"},
+		{"text": "children3"}
+	] 
+},
+{ 
+	"text": "boss2","hasChildren": true
+},
+{
+	"text": "boss3",
+	"children": [
+		{"text": "children1" },
+		{"text": "children2" },
+		{"text": "children3", "id": "36", "hasChildren": true },
+		{"text": "children4"}
+	] 
+} 
+] 

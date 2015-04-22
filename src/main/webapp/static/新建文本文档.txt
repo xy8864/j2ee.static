@@ -1,0 +1,43 @@
+<script type="text/javascript" src="http://hellobooky.com/static/jquery-1.4.4.min.js"></script>
+<link href="plugin/chosen/chosen/chosen.css" media="screen" rel="stylesheet" type="text/css"  />
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="pingfen borB" id="pfCon119495610">
+<tbody><tr>
+<th width="30%" colspan="2" class="tl" scope="col">已有 <b class="blue">3</b> 人评分</th>
+<th width="10%" scope="col">评分</th>
+<th class="tl" scope="col">理由</th>
+<th class="tr">
+<i class="iSmark"><a onclick="switchOpera(this,'pfCon119495610')" class="operass ico_sq" href="javascript:void(0);">收起</a></i>
+</th>
+</tr>
+</tbody><tbody class="tb">
+<tr>
+<td width="20%"><a target="_blank" href="http://my.pconline.com.cn/20311655/forum/"><img width="32" height="32" src="http://i1.3conline.com/images/upload/upc/face/20/31/16/55/20311655_120x120" alt="湛江杀人王"></a>&nbsp;<a target="_blank" href="http://my.pconline.com.cn/20311655/forum/">湛江杀人王</a></td>
+<td width="10%" class="tc gray">
+2011-12-04
+</td>
+<td width="10%" class="fb dred tc">+3</td>
+<td colspan="2"></td>
+</tr>
+<tr>
+<td width="20%"><a target="_blank" href="http://my.pconline.com.cn/20728331/forum/"><img width="32" height="32" src="http://i1.3conline.com/images/upload/upc/face/20/72/83/31/20728331_120x120" alt="懒虫"></a>&nbsp;<a target="_blank" href="http://my.pconline.com.cn/20728331/forum/">懒虫</a></td>
+<td width="10%" class="tc gray">
+2011-12-01
+</td>
+<td width="10%" class="fb dred tc">+1</td>
+<td colspan="2"> 漂亮</td>
+</tr>
+<tr>
+<td width="20%"><a target="_blank" href="http://my.pconline.com.cn/21785947/forum/"><img width="32" height="32" src="http://i1.3conline.com/images/upload/upc/face/21/78/59/47/21785947_120x120" alt="PC机器人"></a>&nbsp;<a target="_blank" href="http://my.pconline.com.cn/21785947/forum/">PC机器人</a></td>
+<td width="10%" class="tc gray">
+2011-11-30
+</td>
+<td width="10%" class="fb dred tc">+1</td>
+<td colspan="2">很小资，很漂亮的说</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tr" colspan="5">总评分：<b class="orange">5分</b></td>
+</tr>
+</tfoot>
+</table>

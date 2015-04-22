@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cache-control" content="no-cache, must-revalidate">
+<meta http-equiv="Content-Type" content="text/html;UTF-8">
+<meta http-equiv="pragram" content="no-cache">
+<meta http-equiv="expires" content="0">
+<title></title>
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<link href="static/ui/bootstrap-2.0.3/css/bootstrap.min.css" rel="stylesheet">
+<script type="text/javascript" src="static/jquery-1.7.2.min.js"></script>
+<script src="static/ui/bootstrap-2.0.3/js/bootstrap.min.js"></script>
+<script>
+
+</script>
+<style>
+
+#catalog-root{/*font-weight: 200;font-size: 20px;*/}
+.search-container .btn{margin-left:-5px;margin-bottom:5px;}
+.subhead {margin-bottom: 9px;padding-bottom: 0;}
+.jumbotron {position: relative;}
+</style>
+</head>
+<body data-spy="scroll">
+
+
+<div class="navbar navbar-fixed-top" id="navbar-top">
+    <div class="navbar-inner">
+    <div style="width: auto;" class="container">
+    <ul class="nav">
+      <li class="dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);" id="catalog-root">导航 <b class="caret"></b></a>
+      	<ul class="dropdown-menu">
+          <li><a href="#">分类1</a></li>
+          <li><a href="#">分类2</a></li>
+          <li><a href="#">分类3</a></li>
+          <li class="divider"></li>
+          <li><a href="#">分类4</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle" href="#">编辑 <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">新建分类</a></li>
+          <li><a href="#">新建文章</a></li>
+          <li><a href="#">删除分类</a></li>
+          <li><a href="#">删除文章</a></li>
+        </ul>
+      </li>
+    </ul>
+
+	<ul class="nav">
+		<li class="search-container input-append">
+		<input class="span2" size="16" type="text" id="searchInput"/>
+		<button class="btn" type="button" id="searchButton">Search</button>
+      </li>
+    </ul>
+
+    <ul class="nav pull-right">
+      <li class="dropdown" id="fat-menu">
+        <a data-toggle="dropdown" class="dropdown-toggle" href="#">设置 <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+    </div>
+    </div>
+</div>
+<div style="width: auto;" class="container" id="container">
+      <header class="jumbotron subhead" id="overview">
+        <h1>Javascript for Bootstrap</h1>
+        <p class="lead">Bring Bootstrap's components to life&mdash;now with 12 custom <a href="http://jquery.com/" target="_blank">jQuery</a> plugins.
+        <div class="subnav">
+          <ul class="nav nav-pills">
+            <li><a href="#javascript">All plugins</a></li>
+            <li><a href="#modals">Modal</a></li>
+            <li><a href="#dropdowns">Dropdown</a></li>
+            <li><a href="#scrollspy">Scrollspy</a></li>
+            <li><a href="#tabs">Tab</a></li>
+            <li><a href="#tooltips">Tooltip</a></li>
+            <li><a href="#popovers">Popover</a></li>
+            <li><a href="#alerts">Alert</a></li>
+            <li><a href="#buttons">Button</a></li>
+            <li><a href="#collapse">Collapse</a></li>
+            <li><a href="#carousel">Carousel</a></li>
+            <li><a href="#typeahead">Typeahead</a></li>
+          </ul>
+        </div>
+      </header>
+	<section id="javascript">
+        <div class="page-header">
+          <h1>jQuery plugins <small>A dozen Bootstrap plugins to get you started</small></h1>
+        </div>
+      <div class="row">
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#modals">Modals</a></h3>
+            <p>A streamlined, but flexible, take on the traditional javascript modal plugin with only the minimum required functionality and smart defaults.</p>
+          </label>
+        </div>
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#dropdowns">Dropdowns</a></h3>
+            <p>Add dropdown menus to nearly anything in Bootstrap with this simple plugin. Bootstrap features full dropdown menu support on in the navbar, tabs, and pills.</p>
+          </label>
+        </div>
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#scrollspy">Scrollspy</a></h3>
+            <p>Use scrollspy to automatically update the links in your navbar to show the current active link based on scroll position.</p>
+          </label>
+        </div>
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#tabs">Togglable tabs</a></h3>
+            <p>Use this plugin to make tabs and pills more useful by allowing them to toggle through tabbable panes of local content.</p>
+          </label>
+        </div>
+      </div> <!-- /row -->
+      <div class="row">
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#tooltips">Tooltips</a></h3>
+            <p>A new take on the jQuery Tipsy plugin, Tooltips don't rely on images&mdash;they use CSS3 for animations and data-attributes for local title storage.</p>
+          </label>
+        </div>
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#popovers">Popovers</a> <small class="muted">*</small></h3>
+            <p>Add small overlays of content, like those on the iPad, to any element for housing secondary information.</p>
+            <p class="muted"><strong>*</strong> Requires <a href="#tooltips">Tooltips</a> to be included</p>
+          </label>
+        </div>
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#alerts">Alert messages</a></h3>
+            <p>The alert plugin is a tiny class for adding close functionality to alerts.</p>
+          </label>
+        </div>
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#buttons">Buttons</a></h3>
+            <p>Do more with buttons. Control button states or create groups of buttons for more components like toolbars.</p>
+          </label>
+        </div>
+      </div> <!-- /row -->
+      <div class="row" style="margin-bottom: 9px;">
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#collapse">Collapse</a></h3>
+            <p>Get base styles and flexible support for collapsible components like accordions and navigation.</p>
+          </label>
+        </div>
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#carousel">Carousel</a></h3>
+            <p>Create a merry-go-round of any content you wish to provide an interactive slideshow of content.</p>
+          </label>
+        </div>
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#typeahead">Typeahead</a></h3>
+            <p>A basic, easily extended plugin for quickly creating elegant typeaheads with any form text input.</p>
+          </label>
+        </div>
+        <div class="span3">
+          <label>
+            <h3>Transitions <small class="muted">*</small></h3>
+            <p>For simple transition effects, include bootstrap-transition.js once to slide in modals or fade out alerts.</p>
+            <p class="muted"><strong>*</strong> Required for animation in plugins</p>
+          </label>
+        </div>
+      </div> <!-- /row -->
+      <div class="alert alert-info"><strong>Heads up!</strong> All javascript plugins require the latest version of jQuery.</div>
+    </section>
+</div>
+</body>
+</html>
